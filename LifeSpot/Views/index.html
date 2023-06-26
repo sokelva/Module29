@@ -10,10 +10,10 @@
     <!-- Внутренний скрипт с вызовами функций -->
     <script>
         // Создадим и обработаем сессию
-        let session = handleSession();
+        //let session = handleSession();
 
         // Логируем в консоль.
-        sessionLog(session)
+        //sessionLog(session)
     </script>
 
 </head>
@@ -25,7 +25,11 @@
         <p>Покажем, что происходит прямо сейчас</p>
         <p class="search">
             Поиск:
-            <input type="text" oninput="getFilter() /*Вызов функции*/"  size="50%">
+            <input type="text" oninput="
+            // Функция объявлена через declaration
+            const inputParseFunction = function(){return document.getElementsByTagName('input')[0].value.toLowerCase();}
+            // Вызов (функция в аргумент передаётся без круглых скобок)
+            filterContent( inputParseFunction )" size=50%>
         </p>
     </header>
     <!--Сайд-бар страницы-->
