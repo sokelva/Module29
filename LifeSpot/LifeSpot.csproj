@@ -5,7 +5,10 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Static\Scripts\" />
+      <Compile Remove="Static\Scripts\**" />
+      <Content Remove="Static\Scripts\**" />
+      <EmbeddedResource Remove="Static\Scripts\**" />
+      <None Remove="Static\Scripts\**" />
     </ItemGroup>
 
     <ItemGroup>
