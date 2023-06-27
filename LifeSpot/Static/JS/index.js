@@ -37,13 +37,12 @@ function handleSession() {
 * Будет вызываться благодаря атрибуту oninput на index.html
 */
 
-function filterContent(inputParseFunction) { // в этот параметр будет передана ФУНКЦИЯ парсинга пользовательского ввода
-
+function filterContent() {
     let elements = document.getElementsByClassName('video-container');
 
     for (let i = 0; i <= elements.length; i++) {
         let videoText = elements[i].querySelector(".video-title").innerText;
-        if (!videoText.toLowerCase().includes(inputParseFunction() /*Переданная функция вызвана*/.toLowerCase())) {
+        if (!videoText.toLowerCase().includes(inputParseFunction() /* Захват переменной теперь происходит с помощью замыкания */.toLowerCase())) {
             elements[i].style.display = 'none';
         } else {
             elements[i].style.display = 'inline-block';
